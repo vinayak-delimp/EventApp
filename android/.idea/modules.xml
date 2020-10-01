@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/EventApp.iml" filepath="$PROJECT_DIR$/.idea/modules/EventApp.iml" group="EventApp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="EventApp/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-559194419/react-native-community_async-storage.iml" filepath="$PROJECT_DIR$/.idea/modules/-559194419/react-native-community_async-storage.iml" group="EventApp/react-native-community_async-storage" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1494479606/react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/-1494479606/react-native-community_masked-view.iml" group="EventApp/react-native-community_masked-view" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1695543053/react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/1695543053/react-native-gesture-handler.iml" group="EventApp/react-native-gesture-handler" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1947900437/react-native-onesignal.iml" filepath="$PROJECT_DIR$/.idea/modules/1947900437/react-native-onesignal.iml" group="EventApp/react-native-onesignal" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1707820305/react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/-1707820305/react-native-reanimated.iml" group="EventApp/react-native-reanimated" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2019329994/react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/-2019329994/react-native-safe-area-context.iml" group="EventApp/react-native-safe-area-context" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1730706482/react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/-1730706482/react-native-screens.iml" group="EventApp/react-native-screens" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2140517399/react-native-vector-icons.iml" filepath="$PROJECT_DIR$/.idea/modules/-2140517399/react-native-vector-icons.iml" group="EventApp/react-native-vector-icons" />
+    </modules>
+  </component>
+</project>
