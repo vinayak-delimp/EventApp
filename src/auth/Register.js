@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import {
   View,
@@ -12,10 +12,10 @@ import {
   Alert,
   ActivityIndicator,
 } from 'react-native';
-import {ApiCommon} from '../Apicommon';
+import { ApiCommon } from '../Apicommon';
 import AsyncStorage from '@react-native-community/async-storage';
 export default class Login extends Component {
-  device_token='';
+  device_token = '';
   constructor() {
     super();
 
@@ -25,23 +25,22 @@ export default class Login extends Component {
       name: '',
       lastname: '',
       cpassword: '',
-      mobile:'',
+      mobile: '',
       company: '',
 
       isLoading: false,
     };
 
     try {
-      AsyncStorage.getItem('device_token').then(val =>{
-          if(val !== null)
-          {
-            this.device_token = val;
-           // alert(this.device_token);
-          }
-          
+      AsyncStorage.getItem('device_token').then(val => {
+        if (val !== null) {
+          this.device_token = val;
+          // alert(this.device_token);
+        }
+
 
       });
-      
+
     } catch (error) {
       // Error retrieving data
     }
@@ -63,40 +62,40 @@ export default class Login extends Component {
     }
     if (this.state.lastname === '') {
       this.showValidationAlert('Enter your last name')
-      
+
       return;
     }
 
     if (this.state.company === '') {
       this.showValidationAlert('Enter Company.')
-      
+
       return;
     }
     if (this.state.email === '') {
-      
+
       this.showValidationAlert('Enter Email address.')
-      
+
       return;
     }
     if (this.state.password === '') {
       this.showValidationAlert('Enter Password.')
-      
+
       return;
     }
 
     if (this.state.mobile === '') {
       this.showValidationAlert('Enter Mobile Number.')
-      
+
       return;
     }
 
 
-    if (this.state.mobile.length >10 || this.state.mobile.length < 10) {
+    if (this.state.mobile.length > 10 || this.state.mobile.length < 10) {
       this.showValidationAlert('Enter valid mobile number.')
-      
+
       return;
     }
-    
+
     this.setState({
       isLoading: true,
     });
@@ -119,23 +118,22 @@ export default class Login extends Component {
       this.state.lastname +
       '&company=' +
       this.state.company +
-     "&phone="+this.state.mobile+
+      "&phone=" + this.state.mobile +
       '&c_password=' +
-      this.state.password+
-      "&device_token="+this.device_token;
-      
-      console.log(url);
+      this.state.password +
+      "&device_token=" + this.device_token;
+
+    console.log(url);
     fetch(url, options)
       .then((response) => response.json())
       .then((responseJson) => {
         if (responseJson.status === '1') {
-          this.props.navigation.navigate('ThankyouScreen');
-      }
-      else
-       {
-        Alert.alert(responseJson.data.message);
+          this.props.navigation.goBack();
+        }
+        else {
+          Alert.alert(responseJson.data.message);
 
-       } 
+        }
         this.setState({
           isLoading: false,
           dataSource: responseJson,
@@ -145,8 +143,7 @@ export default class Login extends Component {
   };
 
 
-  showValidationAlert(msg)
-  {
+  showValidationAlert(msg) {
     Alert.alert(
       "Alert",
       msg,
@@ -178,16 +175,16 @@ export default class Login extends Component {
           {/* <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
                         <Image source={require('../../assets/images/logo.png')} />
                     </View> */}
-          <ScrollView style={{flex: 1, padding: 20}}>
-          <Image
-              style={{alignSelf:'center', width: 150, height: 120,resizeMode:'contain'}}
+          <ScrollView style={{ flex: 1, padding: 20 }}>
+            <Image
+              style={{ width: 220, height: 150, resizeMode: 'contain',alignSelf:'center' }}
               source={require('../../assets/images/logo.png')}
             />
             <View style={styles.searchSection}>
               {/* <Icon name="ios-search" size={20} color="#000" /> */}
               <TextInput
                 placeholder="First name"
-                style={{height: 40,width:'80%',fontFamily:'Lato-Regular'}}
+                style={{ height: 40, width: '80%', fontFamily: 'Lato-Regular' }}
                 value={this.state.name}
                 onChangeText={(val) => this.onChangeInputText(val, 'name')}
                 underlineColorAndroid="transparent"
@@ -197,7 +194,7 @@ export default class Login extends Component {
               {/* <Icon name="user-circle" size={20} color="#000" /> */}
               <TextInput
                 placeholder="Last name"
-                style={{height: 40,width:'80%',fontFamily:'Lato-Regular'}}
+                style={{ height: 40, width: '80%', fontFamily: 'Lato-Regular' }}
                 value={this.state.lastname}
                 onChangeText={(val) => this.onChangeInputText(val, 'lastname')}
                 underlineColorAndroid="transparent"
@@ -210,7 +207,7 @@ export default class Login extends Component {
               {/* <Icon name="user-circle" size={20} color="#000" /> */}
               <TextInput
                 placeholder="Company"
-                style={{height: 40,width:'80%',fontFamily:'Lato-Regular'}}
+                style={{ height: 40, width: '80%', fontFamily: 'Lato-Regular' }}
                 value={this.state.company}
                 onChangeText={(val) => this.onChangeInputText(val, 'company')}
                 underlineColorAndroid="transparent"
@@ -221,7 +218,7 @@ export default class Login extends Component {
               {/* <Icon name="user-circle" size={20} color="#000" /> */}
               <TextInput
                 placeholder="Email Id"
-                style={{height: 40,width:'80%',fontFamily:'Lato-Regular'}}
+                style={{ height: 40, width: '80%', fontFamily: 'Lato-Regular' }}
                 value={this.state.email}
                 onChangeText={(val) => this.onChangeInputText(val, 'email')}
                 underlineColorAndroid="transparent"
@@ -229,13 +226,13 @@ export default class Login extends Component {
             </View>
 
 
-            
+
             <View style={styles.searchSection}>
               {/* <Icon name="user-circle" size={20} color="#000" /> */}
               <TextInput
-              secureTextEntry={true}
+                secureTextEntry={true}
                 placeholder="Password"
-                style={{height: 40,width:'80%',fontFamily:'Lato-Regular'}}
+                style={{ height: 40, width: '80%', fontFamily: 'Lato-Regular' }}
                 value={this.state.password}
                 onChangeText={(val) => this.onChangeInputText(val, 'password')}
                 underlineColorAndroid="transparent"
@@ -248,17 +245,17 @@ export default class Login extends Component {
               <TextInput
                 placeholder="Mobile Number"
                 maxLength={10}
-                
-                style={{height: 40,width:'80%',fontFamily:'Lato-Regular'}}
+
+                style={{ height: 40, width: '80%', fontFamily: 'Lato-Regular' }}
                 value={this.state.address}
                 onChangeText={(val) => this.onChangeInputText(val, 'mobile')}
                 underlineColorAndroid="transparent"
               />
             </View>
 
-            <View style={{flexDirection: 'row'}}>
+            <View style={{ flexDirection: 'row' }}>
 
-              
+
             </View>
 
             <TouchableOpacity
@@ -268,22 +265,22 @@ export default class Login extends Component {
             </TouchableOpacity>
 
             <TouchableOpacity
-              style={{alignSelf: 'center', margin: 20}}
-              onPress={()=>this.props.navigation.goBack()}
-              // onPress={onPress}
+              style={{ alignSelf: 'center', margin: 20 }}
+              onPress={() => this.props.navigation.goBack()}
+            // onPress={onPress}
             >
               <Text>
                 <Text
-                style={{color: '#ffffff', marginRight:5,  fontSize: 16,fontFamily:'Lato-Regular'}}>
-                Already have account? 
+                  style={{ color: '#ffffff', marginRight: 5, fontSize: 16, fontFamily: 'Lato-Regular' }}>
+                  Already have account?
               </Text>
-              <Text
-                style={{marginLeft:5,color: '#fff93c', fontFamily:'Lato-Bold', fontSize: 16}}>
-                &nbsp;Login Now
+                <Text
+                  style={{ marginLeft: 5, color: '#fff93c', fontFamily: 'Lato-Bold', fontSize: 16 }}>
+                  &nbsp;Login Now
               </Text>
-                </Text>
+              </Text>
             </TouchableOpacity>
-            <View style={{height: 20}} />
+            <View style={{ height: 20 }} />
           </ScrollView>
           {/* <View style={{ flex: 1, padding: 25, alignItems: "center" }}>
                         <TouchableOpacity
@@ -309,23 +306,24 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    fontFamily:'Lato-Bold'  },
-    button: {
-      shadowColor: 'rgba(255,0,0, .4)', // IOS
-      shadowOffset: { height: 1, width: 1 }, // IOS
-      shadowOpacity: 1, // IOS
-      shadowRadius: 1, //IOS
-      backgroundColor: '#ffffff',
-      elevation: 5, // Android
-      height: 50,
-      width: 150,
-      borderRadius: 25,
-      justifyContent: 'center',
-      alignItems: 'center',
-      flexDirection: 'row',
-      marginTop: 30,
-      alignSelf:'center'
-  
+    fontFamily: 'Lato-Bold'
+  },
+  button: {
+    shadowColor: 'rgba(255,0,0, .4)', // IOS
+    shadowOffset: { height: 1, width: 1 }, // IOS
+    shadowOpacity: 1, // IOS
+    shadowRadius: 1, //IOS
+    backgroundColor: '#ffffff',
+    elevation: 5, // Android
+    height: 50,
+    width: 150,
+    borderRadius: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginTop: 30,
+    alignSelf: 'center'
+
   },
   image: {
     flex: 1,
@@ -344,7 +342,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
     shadowColor: '#000',
-    shadowOffset: {width: 0, height: 1},
+    shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 5,
@@ -364,7 +362,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
     shadowColor: '#000',
-    shadowOffset: {width: 0, height: 1},
+    shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 5,

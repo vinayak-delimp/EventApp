@@ -27,7 +27,7 @@ export default class Login extends Component {
 
       if (login !== null) {
        // console.log('value', login);
-        this.props.navigation.goBack(null);
+       // this.props.navigation.goBack(null);
 
         this.props.navigation.navigate('Home');
       } else {

@@ -105,7 +105,7 @@ export default class Sponsers extends Component {
       },
       {
         "name": "LemonApp",
-        "info": "",
+        "info": "At LemonApp, we make custom apps and high-performance websites affordable and accessible for Small to Medium Businesses and Not-For-Profit organisations without compromising on quality, user experience or ongoing support.",
         "image": require('../../assets/images/spnsr/sp21.png')
       },
       {
@@ -187,12 +187,16 @@ export default class Sponsers extends Component {
       },
       {
         "name": "CISCO",
-        "info": "",
+        "info": "Cisco is the worldwide leader in IT, networking, security and collaboration. We enable people to make powerful connections - whether in business, education, "+
+        "philanthropy, or creativity. Cisco hardware, software, and service offerings are used "+
+        "to create the Internet solutions that make networks possible - providing easy access to information anywhere, at any time. "+
+        "\nCisco helps seize the opportunities of tomorrow by proving that amazing things can "+
+        "happen when you connect the unconnected. If you can imagine it, we will build the bridge to get you there.",
         "image": require('../../assets/images/spnsr/sp35.png')
       },
       {
         "name": "SDS",
-        "info": "",
+        "info": "Safety Direct Solutions leads the way as providers of quality-assured and nationally recognised training and qualifications in Workplace Safety.",
         "image": require('../../assets/images/spnsr/sp36.png')
       },
       {

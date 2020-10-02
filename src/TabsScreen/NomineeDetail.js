@@ -3,9 +3,10 @@ import { TouchableOpacity, FlatList, Image, ImageBackground, StyleSheet, Text, V
 import { ApiCommon } from "../Apicommon";
 import AsyncStorage from '@react-native-community/async-storage';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { ScrollView } from "react-native-gesture-handler";
 export default class NomineeDetail extends Component {
     awardid;
-    awardName;
+    nomineename;
     nomineeid;
     desc;
     image;
@@ -14,7 +15,7 @@ export default class NomineeDetail extends Component {
         const user_name = this.props.route.params.param1;
         this.awardid = this.props.route.params.param2;
         this.nomineeid = user_name.id;
-        this.awardName = user_name.name;
+        this.nomineename = user_name.name;
         this.desc = user_name.description;
         this.image = user_name.image;
         this.state = {
@@ -101,15 +102,14 @@ export default class NomineeDetail extends Component {
         fetch(url, options)
             .then(response => response.json())
             .then((responseJson) => {
-                // alert(JSON.stringify(responseJson));
                 if (responseJson.status === '1') {
                     this.props.navigation.navigate('ThankyouScreen');
                 }
                 else {
-                    alert(responseJson.data.error[0]);
+                    alert(responseJson.data.message);
                 }
             })
-            .catch(error => console.log(error)) //to catch the errors if any   
+            .catch(error => { console.log(error); }) //to catch the errors if any   
 
     }
 
@@ -143,9 +143,11 @@ export default class NomineeDetail extends Component {
     }
 
     render() {
+
         return (
 
             <>
+
                 <ImageBackground imageStyle={{ borderBottomLeftRadius: 30, borderBottomRightRadius: 30 }}
                     source={require('../../assets/images/app_background.png')} style={styles.image}>
                     {/* <View style={{ flexDirection: 'row', borderBottomWidth: 0, width: '100%', height: 56, justifyContent: 'center' }}>
@@ -172,15 +174,19 @@ export default class NomineeDetail extends Component {
                         marginTop: 10,
                         paddingBottom: 10, paddingTop: 20
                     }}>
-                        <Icon style={[{ marginLeft: 16, color: '#FF0000', alignSelf: 'flex-end', marginRight: 20 }]} size={18} name={'close'} onPress={() => this.onBack()} />
+                        <Icon style={[{ marginLeft: 16, color: '#FF0000', alignSelf: 'flex-end', marginRight: 20 }]} size={22} name={'close'} onPress={() => this.onBack()} />
 
                         <Image
 
-                            style={{ resizeMode: 'cover', width: 120, height: 120, borderRadius: 75, borderWidth: 2, borderColor: '#494949', alignSelf: 'center' }}
+                            style={{ resizeMode: 'contain', width: 120, height: 120, borderWidth: 2, borderColor: '#494949', alignSelf: 'center' }}
                             defaultSource={{ uri: 'https://i2.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1' }}
                             source={{ uri: this.image ? this.image : 'https://i2.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1' }} />
 
+                        <Text style={styles.defaultText} >{this.nomineename}</Text>
+                        <ScrollView showsVerticalScrollIndicator={false}>
                         <Text style={styles.defaultDescText} >{this.desc}</Text>
+                        </ScrollView>
+                        
                         <TouchableOpacity style={{
                             shadowColor: 'rgba(255,0,0, .4)', // IOS
                             shadowOffset: { height: 1, width: 1 }, // IOS
@@ -294,9 +300,10 @@ const styles = StyleSheet.create({
     defaultText: {
         color: '#000000',
         fontSize: 16,
-        flex: 1,
+        alignSelf: 'center',
         fontFamily: 'Lato-Bold',
         paddingRight: 10,
+        marginTop: 10,
         paddingLeft: 10,
 
 
@@ -318,7 +325,7 @@ const styles = StyleSheet.create({
         color: '#000000',
         fontSize: 14,
         flex: 1,
-        marginTop: 20,
+        marginTop: 10,
         fontFamily: 'Lato-Regular',
         paddingRight: 10,
         paddingLeft: 10,

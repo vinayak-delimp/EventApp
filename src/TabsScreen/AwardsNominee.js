@@ -187,17 +187,17 @@ export default class AwardsNominee extends Component {
 
                                     // for single item
                                     onPress={() => this.handleSelection(item)}
-                                    style={item.id === this.state.selectedId ? styles.selected : styles.default}
+                                    style={styles.default}
 
                                 >
                                     <View style={{
 
                                         elevation: 5, flexDirection: 'row', justifyContent: 'center'
                                     }}>
-                                        <View style={{ flex: 1 }}>
+                                        <View style={{ flex: 1,justifyContent:'center',paddingLeft:5 }}>
                                             <Image
 
-                                                style={{ resizeMode: 'cover', width: '100%', height: '100%' }}
+                                                style={{ resizeMode:'center', width: '80%', height: '80%' }}
                                                 defaultSource={{ uri: 'https://i2.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1' }}
                                                 source={{ uri: item.image ? item.image : 'https://i2.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1' }} />
 

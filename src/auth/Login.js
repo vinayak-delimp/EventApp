@@ -83,7 +83,7 @@ export default class Login extends Component {
         }
         else {
           AsyncStorage.setItem('login', JSON.stringify(responseJson.data));
-          AsyncStorage.setItem("fullName",responseJson.data.full_name);
+          // AsyncStorage.setItem("fullName",JSON.stringify(responseJson.data.full_name));
           this.props.navigation.goBack(null);
 
           this.props.navigation.navigate('Home');
@@ -196,7 +196,7 @@ export default class Login extends Component {
 
     fontFamily: 'Lato-Bold',
     alignSelf: 'center',
-}}>Sponsered by</Text>
+}}>Sponsored by</Text>
 <View style={{ flexDirection: 'row', marginTop: 15 }}>
     <View style={{ backgroundColor: '#FFFFFF', borderRadius: 10, width: 80, height: 70, marginLeft: 10 }}>
         <Image

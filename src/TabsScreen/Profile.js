@@ -118,26 +118,26 @@ export default class Profile extends Component {
             style={{ alignSelf: 'center', marginTop: 20, marginRight: 15, height: 110, width: 160, resizeMode: 'contain', marginBottom: 20 }}
             source={require('../../assets/images/eventlogo.png')}
           /> */}
-          <View style={{ flexDirection: 'row', marginTop: 15 }}>
+          <View style={{ flexDirection: 'row', marginTop: 15,paddingLeft:5 }}>
             <Text style={styles.pro_text}>Name</Text>
             <Text style={styles.pro_text}>{this.state.jjbody.full_name}</Text>
 
           </View>
 
 
-          <View style={{ flexDirection: 'row', marginTop: 15 }}>
+          <View style={{ flexDirection: 'row', marginTop: 15,paddingLeft:5 }}>
             <Text style={styles.pro_text}>Phone No</Text>
             <Text style={styles.pro_text}>{this.state.jjbody.phone}</Text>
 
           </View>
 
-          <View style={{ flexDirection: 'row', marginTop: 15 }}>
+          <View style={{ flexDirection: 'row', marginTop: 15,paddingLeft:5 }}>
             <Text style={styles.pro_text}>Email Id</Text>
             <Text style={styles.pro_text}>{this.state.jjbody.email}</Text>
 
           </View>
 
-          <View style={{ flexDirection: 'row', marginTop: 15 }}>
+          <View style={{ flexDirection: 'row', marginTop: 15,paddingLeft:5 }}>
             <Text style={styles.pro_text}>Company Name</Text>
             <Text style={styles.pro_text}>{this.state.jjbody.company}</Text>
 

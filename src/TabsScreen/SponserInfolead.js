@@ -235,7 +235,7 @@ export default class SponserInfolead extends Component {
               <Image style={{ backgroundColor: '#ffffff', padding: 5, height: 120, width: 140, alignSelf: 'center', resizeMode: 'contain', borderRadius: 15 }} source={this.state.sponserimage}></Image>
 
             </View>
-            <Text style={{ color: '#000000', fontFamily: 'Lato-Regular', fontSize: 12, textAlign: 'justify' }}>{this.state.sponserinfo}</Text>
+            <Text style={{ color: '#000000', fontFamily: 'Lato-Regular', fontSize: 12 }}>{this.state.sponserinfo}</Text>
 
 
 

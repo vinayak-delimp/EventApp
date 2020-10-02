@@ -183,6 +183,19 @@ function MainNavigation1() {
         },
       }} />
 
+<HomeStack.Screen name='Profile' component={Profile} options={{
+        title: 'Map Floor',
+        headerStyle: {
+          backgroundColor: '#e85b3d',
+
+        },
+        headerTitleAlign: 'center',
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }} />
+
       <HomeStack.Screen name='Sponsers' component={Sponser} options={{
         title: 'Map Floor',
         headerStyle: {
@@ -281,12 +294,12 @@ function TabNavigator() {
 
       }} />
 
-      <Tab.Screen name="Profile" component={Profile} options={{
+      {/* <Tab.Screen name="Profile" component={Profile} options={{
         tabBarLabel: 'Profile',
         tabBarIcon: ({ color, size }) => (
           <Icon name="user" color={color} size={size} />
         ),
-      }} />
+      }} /> */}
     </Tab.Navigator>
   );
 }

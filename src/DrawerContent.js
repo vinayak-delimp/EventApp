@@ -27,18 +27,26 @@ export   function DrawerContent(props) {
     // //}
     var usern = "";
     
-     AsyncStorage.getItem("login").then(val=>{
-        let jbody = JSON.parse(val);
-       
-    //    alert(username+val);
-       console.log("testconsole=** ", jbody);
-       setTimeout(() => {
-        usern = jbody.full_name;
-
-        console.log("5testconsole=** ", usern); 
-       }, 500);
-      
-    });
+    // setTimeout(() => {
+        // AsyncStorage.getItem("login").then(val=>{
+        //     let jbody = JSON.parse(val);
+           
+        // //    alert(username+val);
+        //    console.log("testconsole=** ", jbody);
+        //    setTimeout(() => {
+        //     usern = jbody.full_name;
+    
+        //     console.log("5testconsole=** ", usern); 
+           // alert(usern);
+          
+        
+        
+        
+    //     }, 500);
+          
+    //     });
+    // }, 500);
+   
     
     return (
         
@@ -47,12 +55,15 @@ export   function DrawerContent(props) {
                 <View style={styles.drawerContent}>
                     <View style={styles.userInfoSection}>
 
-                       
+{/*                        
 <Text style={{color:'#FFFFFF', fontFamily:'Lato-Bold',fontSize:22}}>{usern}
 </Text>
 <Text style={{color:'#FFFFFF', fontFamily:'Lato-Bold',fontSize:14}}>Phone: 1234567890</Text>
-<Text style={{color:'#FFFFFF', fontFamily:'Lato-Bold',fontSize:14}}>Company: Delm</Text>
-
+<Text style={{color:'#FFFFFF', fontFamily:'Lato-Bold',fontSize:14}}>Company: Delm</Text> */}
+<Image
+                                    style={{ alignSelf: 'center', resizeMode: 'contain', height: 140, width: 170 }}
+                                    source={require('../assets/images/eventlogo.png')}
+                                />
 
                     </View>
 
@@ -73,7 +84,7 @@ export   function DrawerContent(props) {
                                 />
                             )}
                             label="Agenda"
-                            labelStyle={{ color: '#fc9932', fontSize: 18, fontFamily:'Lato-Bold' }}
+                            labelStyle={{ color: '#000000', fontSize: 18, fontFamily:'Lato-Bold' }}
                             onPress={() => { props.navigation.navigate('Agenda') }}
                         />
                         <View style={{ width: '100%', height: .8, backgroundColor: '#d3d3d3' }}></View>
@@ -85,7 +96,7 @@ export   function DrawerContent(props) {
                                     source={require('../assets/images/event.png')} />
                             )}
                             label="Event Info"
-                            labelStyle={{ color: '#fc9932', fontSize: 18, fontFamily:'Lato-Bold' }}
+                            labelStyle={{ color: '#000000', fontSize: 18, fontFamily:'Lato-Bold' }}
                             onPress={() => { props.navigation.navigate('EventInfo') }}
                         />
                         <View style={{ width: '100%', height: .8, backgroundColor: '#d3d3d3' }}></View>
@@ -99,7 +110,7 @@ export   function DrawerContent(props) {
                                 />
                             )}
                             label="Speakers"
-                            labelStyle={{ color: '#fc9932', fontSize: 18, fontFamily:'Lato-Bold' }}
+                            labelStyle={{ color: '#000000', fontSize: 18, fontFamily:'Lato-Bold' }}
                             onPress={() => { props.navigation.navigate('Speakers') }}
                         />
                         <View style={{ width: '100%', height: .8, backgroundColor: '#d3d3d3' }}></View>
@@ -111,8 +122,20 @@ export   function DrawerContent(props) {
 
                             )}
                             label="Sponsors"
-                            labelStyle={{ color: '#fc9932', fontSize: 18, fontFamily:'Lato-Bold' }}
+                            labelStyle={{ color: '#000000', fontSize: 18, fontFamily:'Lato-Bold' }}
                             onPress={() => { props.navigation.navigate('Sponsers') }}
+                        />
+
+<View style={{ width: '100%', height: .8, backgroundColor: '#d3d3d3' }}></View>
+                        <DrawerItem
+                            icon={({ color, size }) => (
+                                <Icon  name="user" color={'#000000'} size={24} />
+
+
+                            )}
+                            label="My Profile"
+                            labelStyle={{ color: '#000000',marginLeft:10, fontSize: 18, fontFamily:'Lato-Bold' }}
+                            onPress={() => { props.navigation.navigate('Profile') }}
                         />
 
                     </Drawer.Section>
@@ -146,8 +169,7 @@ const styles = StyleSheet.create({
     },
     userInfoSection: {
         paddingLeft: 20,
-        backgroundColor: 'rgba(190, 64, 58,0.9)'
-,        height:120,
+        height:140,
 justifyContent:'center',
 marginTop:0
     },
@@ -183,7 +205,7 @@ marginTop:0
         marginBottom: 15,
         // borderTopColor: '#f4f4f4',
         // borderTopWidth: 1,
-        backgroundColor: '#fc9932'
+        backgroundColor: '#ffffff'
 
     },
     preference: {

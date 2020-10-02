@@ -170,7 +170,7 @@ export default class AwardsCats extends Component {
 
                                 fontFamily: 'Lato-Bold',
                                 alignSelf: 'center',
-                            }}>Sponsered by</Text>
+                            }}>Sponsored by</Text>
                             <View style={{ flexDirection: 'row', marginTop: 15 }}>
                                 <View style={{ backgroundColor: '#FFFFFF', borderRadius: 10, width: 80, height: 70, marginLeft: 10 }}>
                                     <Image
