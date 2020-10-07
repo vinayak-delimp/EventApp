@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Image,Text } from 'react-native';
+import { View, StyleSheet, Image, Text } from 'react-native';
 import {
     useTheme,
     Avatar,
@@ -18,57 +18,61 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 
 
-export   function DrawerContent(props) {
+export function DrawerContent(props) {
 
     // //const components = async () => {
     //      name:"";
     //       var username;    
-        
+
     // //}
     var usern = "";
-    
-    // setTimeout(() => {
-        // AsyncStorage.getItem("login").then(val=>{
-        //     let jbody = JSON.parse(val);
-           
-        // //    alert(username+val);
-        //    console.log("testconsole=** ", jbody);
-        //    setTimeout(() => {
-        //     usern = jbody.full_name;
-    
-        //     console.log("5testconsole=** ", usern); 
-           // alert(usern);
-          
-        
-        
-        
-    //     }, 500);
-          
-    //     });
-    // }, 500);
-   
-    
+
+
+
     return (
-        
+
         <View style={{ flex: 1 }}>
             <DrawerContentScrollView {...props}>
                 <View style={styles.drawerContent}>
                     <View style={styles.userInfoSection}>
 
-{/*                        
+                        {/*                        
 <Text style={{color:'#FFFFFF', fontFamily:'Lato-Bold',fontSize:22}}>{usern}
 </Text>
 <Text style={{color:'#FFFFFF', fontFamily:'Lato-Bold',fontSize:14}}>Phone: 1234567890</Text>
 <Text style={{color:'#FFFFFF', fontFamily:'Lato-Bold',fontSize:14}}>Company: Delm</Text> */}
-<Image
-                                    style={{ alignSelf: 'center', resizeMode: 'contain', height: 140, width: 170 }}
-                                    source={require('../assets/images/eventlogo.png')}
-                                />
+                        <Image
+                            style={{ alignSelf: 'center', resizeMode: 'contain', height: 140, width: 170 }}
+                            source={require('../assets/images/eventlogo.png')}
+                        />
 
                     </View>
 
                     <Drawer.Section style={styles.drawerSection}>
-                    <DrawerItem
+                        <DrawerItem
+                            icon={({ color, size }) => (
+                                <Icon style={{marginLeft:5}} name="user" color={'#000000'} size={24} />
+
+
+                            )}
+                            label="My Profile"
+                            labelStyle={{ color: '#000000', marginLeft: 10, fontSize: 18, fontFamily: 'Lato-Bold' }}
+                            onPress={() => { props.navigation.navigate('Profile') }}
+                        />
+                        <View style={{ width: '100%', height: .8, backgroundColor: '#d3d3d3' }}></View>
+                        <DrawerItem
+                            icon={({ color, size }) => (
+                                <Image
+                                    style={{ alignSelf: 'center', resizeMode: 'contain', height: 32, width: 32 }}
+                                    source={require('../assets/images/event.png')} />
+                            )}
+                            label="Event Info"
+                            labelStyle={{ color: '#000000', fontSize: 18, fontFamily: 'Lato-Bold' }}
+                            onPress={() => { props.navigation.navigate('EventInfo') }}
+                        />
+                        <View style={{ width: '100%', height: .8, backgroundColor: '#d3d3d3' }}></View>
+
+                        <DrawerItem
                             icon={({ color, size }) => (
                                 // <Icon 
                                 // name="calendar" 
@@ -84,25 +88,15 @@ export   function DrawerContent(props) {
                                 />
                             )}
                             label="Agenda"
-                            labelStyle={{ color: '#000000', fontSize: 18, fontFamily:'Lato-Bold' }}
+                            labelStyle={{ color: '#000000', fontSize: 18, fontFamily: 'Lato-Bold' }}
                             onPress={() => { props.navigation.navigate('Agenda') }}
                         />
                         <View style={{ width: '100%', height: .8, backgroundColor: '#d3d3d3' }}></View>
-                    
-                        <DrawerItem
-                            icon={({ color, size }) => (
-                                <Image
-                                    style={{ alignSelf: 'center', resizeMode: 'contain', height: 32, width: 32 }}
-                                    source={require('../assets/images/event.png')} />
-                            )}
-                            label="Event Info"
-                            labelStyle={{ color: '#000000', fontSize: 18, fontFamily:'Lato-Bold' }}
-                            onPress={() => { props.navigation.navigate('EventInfo') }}
-                        />
-                        <View style={{ width: '100%', height: .8, backgroundColor: '#d3d3d3' }}></View>
+
+
 
                         {/* <View style={{ width: '100%', height: .8, backgroundColor: '#d3d3d3' }}></View> */}
-                            <DrawerItem
+                        <DrawerItem
                             icon={({ color, size }) => (
                                 <Image
                                     style={{ alignSelf: 'center', resizeMode: 'contain', height: 32, width: 32 }}
@@ -110,7 +104,7 @@ export   function DrawerContent(props) {
                                 />
                             )}
                             label="Speakers"
-                            labelStyle={{ color: '#000000', fontSize: 18, fontFamily:'Lato-Bold' }}
+                            labelStyle={{ color: '#000000', fontSize: 18, fontFamily: 'Lato-Bold' }}
                             onPress={() => { props.navigation.navigate('Speakers') }}
                         />
                         <View style={{ width: '100%', height: .8, backgroundColor: '#d3d3d3' }}></View>
@@ -122,21 +116,11 @@ export   function DrawerContent(props) {
 
                             )}
                             label="Sponsors"
-                            labelStyle={{ color: '#000000', fontSize: 18, fontFamily:'Lato-Bold' }}
+                            labelStyle={{ color: '#000000', fontSize: 18, fontFamily: 'Lato-Bold' }}
                             onPress={() => { props.navigation.navigate('Sponsers') }}
                         />
 
-<View style={{ width: '100%', height: .8, backgroundColor: '#d3d3d3' }}></View>
-                        <DrawerItem
-                            icon={({ color, size }) => (
-                                <Icon  name="user" color={'#000000'} size={24} />
-
-
-                            )}
-                            label="My Profile"
-                            labelStyle={{ color: '#000000',marginLeft:10, fontSize: 18, fontFamily:'Lato-Bold' }}
-                            onPress={() => { props.navigation.navigate('Profile') }}
-                        />
+                        {/* <View style={{ width: '100%', height: .8, backgroundColor: '#d3d3d3' }}></View> */}
 
                     </Drawer.Section>
 
@@ -158,7 +142,7 @@ export   function DrawerContent(props) {
             </Drawer.Section>
         </View>
     );
-            
+
 }
 
 const styles = StyleSheet.create({
@@ -169,9 +153,9 @@ const styles = StyleSheet.create({
     },
     userInfoSection: {
         paddingLeft: 20,
-        height:140,
-justifyContent:'center',
-marginTop:0
+        height: 140,
+        justifyContent: 'center',
+        marginTop: 0
     },
     title: {
         fontSize: 16,

@@ -235,7 +235,7 @@ export default class SponserInfolead extends Component {
               <Image style={{ backgroundColor: '#ffffff', padding: 5, height: 120, width: 140, alignSelf: 'center', resizeMode: 'contain', borderRadius: 15 }} source={this.state.sponserimage}></Image>
 
             </View>
-            <Text style={{ color: '#000000', fontFamily: 'Lato-Regular', fontSize: 12 }}>{this.state.sponserinfo}</Text>
+            <Text style={{ color: '#000000', fontFamily: 'Lato-Regular', fontSize: 12,marginTop:10 }}>{this.state.sponserinfo}</Text>
 
 
 
@@ -243,7 +243,7 @@ export default class SponserInfolead extends Component {
 
               <TextInput
                 placeholder="Name"
-                style={{ height: 40 }}
+                style={{ height: 40,width:'80%' }}
                 value={this.state.name}
                 onChangeText={(val) => this.onChangeInputText(val, 'name')}
                 underlineColorAndroid="transparent"
@@ -254,7 +254,7 @@ export default class SponserInfolead extends Component {
               <TextInput
                 maxLength={10}
                 placeholder="Phone"
-                style={{ height: 40 }}
+                style={{ height: 40 ,width:'80%'}}
                 value={this.state.phone}
                 onChangeText={(val) => this.onChangeInputText(val, 'phone')}
                 underlineColorAndroid="transparent"
@@ -265,7 +265,7 @@ export default class SponserInfolead extends Component {
               {/* <Icon name="user-circle" size={20} color="#000" /> */}
               <TextInput
                 placeholder="Email"
-                style={{ height: 40 }}
+                style={{ height: 40,width:'80%' }}
                 value={this.state.email}
                 onChangeText={(val) => this.onChangeInputText(val, 'email')}
                 underlineColorAndroid="transparent"
@@ -276,7 +276,7 @@ export default class SponserInfolead extends Component {
               {/* <Icon name="user-circle" size={20} color="#000" /> */}
               <TextInput
                 placeholder="Job Title"
-                style={{ height: 40 }}
+                style={{ height: 40,width:'80%' }}
                 value={this.state.jobtitle}
                 onChangeText={(val) => this.onChangeInputText(val, 'jobtitle')}
                 underlineColorAndroid="transparent"
@@ -288,7 +288,7 @@ export default class SponserInfolead extends Component {
               {/* <Icon name="user-circle" size={20} color="#000" /> */}
               <TextInput
                 placeholder="Organisation"
-                style={{ height: 40 }}
+                style={{ height: 40,width:'80%' }}
                 value={this.state.organisation}
                 onChangeText={(val) => this.onChangeInputText(val, 'organisation')}
                 underlineColorAndroid="transparent"
@@ -299,7 +299,7 @@ export default class SponserInfolead extends Component {
               {/* <Icon name="user-circle" size={20} color="#000" /> */}
               <TextInput
                 placeholder="Comment"
-                style={{ height: 80 }}
+                style={{ height: 80,width:'80%' }}
                 value={this.state.comment}
                 onChangeText={(val) => this.onChangeInputText(val, 'comment')}
                 underlineColorAndroid="transparent"

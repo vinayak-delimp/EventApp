@@ -127,11 +127,12 @@ export default class Login extends Component {
     fetch(url, options)
       .then((response) => response.json())
       .then((responseJson) => {
+        // alert(JSON.stringify(responseJson));
         if (responseJson.status === '1') {
           this.props.navigation.goBack();
         }
         else {
-          Alert.alert(responseJson.data.message);
+          Alert.alert(responseJson.data.error[0]);
 
         }
         this.setState({
@@ -217,7 +218,7 @@ export default class Login extends Component {
             <View style={styles.searchSection}>
               {/* <Icon name="user-circle" size={20} color="#000" /> */}
               <TextInput
-                placeholder="Email Id"
+                placeholder="Email address"
                 style={{ height: 40, width: '80%', fontFamily: 'Lato-Regular' }}
                 value={this.state.email}
                 onChangeText={(val) => this.onChangeInputText(val, 'email')}

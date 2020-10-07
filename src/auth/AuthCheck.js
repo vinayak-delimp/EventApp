@@ -17,7 +17,7 @@ export default class Login extends Component {
     setTimeout(() => {
         
     this.readData();
-    }, 1000);
+    }, 50);
   }
 
   readData = async () => {
@@ -43,10 +43,8 @@ export default class Login extends Component {
 
   render() {
     return (
-      <Image source={require('../../assets/images/splash.png')}
-      style={styles.image}>
-
-      </Image>
+      <>
+      </>
     );
   }
 }

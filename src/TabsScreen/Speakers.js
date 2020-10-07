@@ -10,30 +10,7 @@ export default class Speakers extends Component {
       dataSource: []
     };
     this.sponsersData = [
-      {
-        "name": "Rudi Mistry",
-        "short_info": "Rudi offers a history of success spearheading all facets of management within the TBTC globally applying strong acumen and leadership talents.",
-
-        "long_info": "Rudi offers a history of success" +
-          "spearheading all facets of" +
-          "management within the TBTC" +
-          "globally applying strong" +
-          "acumen and leadership talents." +
-          "Rudi has had great success during his 10 years in role" +
-          "and sets a benchmark of excellence. Most recently" +
-          "Rudi has expanded his opera􀆟ons to Adelaide and is" +
-          "responsible for providing overall leadership and" +
-          "management of business systems and processes. Rudi" +
-          "launched his career at Telstra over 20 years ago and" +
-          "has spent over 15 years in increasingly senior" +
-          "posi􀆟ons, finally being promoted to GM 6 years ago." +
-          "He is a highly regarded General Manager and people" +
-          "leader with a proven reputa􀆟on for building strong" +
-          "market leading teams in the industry.",
-        "post": "General Manager",
-        "office": "TBTC Perth North",
-        "image": require('../../assets/images/speaker/rudi.png')
-      },
+      
       {
         "name": "John O'Driscoll",
         "short_info": "John is the founder of IEBF, sparked by a desire to bridge the" +
@@ -61,6 +38,30 @@ export default class Speakers extends Component {
         "image": require('../../assets/images/speaker/john.png')
       },
       {
+        "name": "Rudi Mistry",
+        "short_info": "Rudi offers a history of success spearheading all facets of management within the TBTC globally applying strong acumen and leadership talents.",
+
+        "long_info": "Rudi offers a history of success" +
+          "spearheading all facets of" +
+          "management within the TBTC" +
+          "globally applying strong" +
+          "acumen and leadership talents." +
+          "Rudi has had great success during his 10 years in role" +
+          "and sets a benchmark of excellence. Most recently" +
+          "Rudi has expanded his opera􀆟ons to Adelaide and is" +
+          "responsible for providing overall leadership and" +
+          "management of business systems and processes. Rudi" +
+          "launched his career at Telstra over 20 years ago and" +
+          "has spent over 15 years in increasingly senior" +
+          "posi􀆟ons, finally being promoted to GM 6 years ago." +
+          "He is a highly regarded General Manager and people" +
+          "leader with a proven reputa􀆟on for building strong" +
+          "market leading teams in the industry.",
+        "post": "General Manager",
+        "office": "TBTC Perth North",
+        "image": require('../../assets/images/speaker/rudi.png')
+      },
+      {
         "name": "Camillo Della Maddalena",
         "short_info": "Camillo is Managing Director of" +
           " CDM Australia Established in" +
@@ -72,6 +73,33 @@ export default class Speakers extends Component {
         "office": "CDM Australia",
         "image": require('../../assets/images/speaker/della.png')
       },
+      {
+        "name": "Jamie D'Arcy",
+        "short_info": "Jamie is a senior executive with more than 20 years’ experience in the Telecommunications Industry. Jamie has had success, working in" +
+          " both the direct sales and indirect sales channels across Telstra SME and Enterprise customers.",
+        "long_info": "",
+        "post": "Regional Manager WA & NT",
+        "office": "Fleet Complete",
+        "image": require('../../assets/images/speaker/jamie.png')
+      },
+      {
+        "name": "Michelle Jenkins",
+        "short_info": "An experienced business leader in Corporate and NGO positions holding Executive and CEO positions for over 25 years. Michelle has worked with the Corporate and NGO sector and has sat on Government NFP and Corporate Boards both in Australia"+
+        " and the UK, with experience in Strategy, Finance and Acquisitions/Mergers and Governance.",
+        "long_info": "",
+        "post": "Regional Manager WA & NT",
+        "office": "Fleet Complete",
+        "image": require('../../assets/images/speaker/jen.png')
+      },
+      {
+        "name": "Tim Fawcett",
+        "short_info": "Tim Fawcett is the head of government affairs for CISCO and part of Cisco's ANZ senior leadership team. Tim is responsible for all Cisco's government engagement activities including public policy advocacy and legislative response.",
+        "long_info": "",
+        "post": "Regional Manager WA & NT",
+        "office": "Fleet Complete",
+        "image": require('../../assets/images/speaker/ff.png')
+      }
+,
       {
         "name": "Marlon Samson",
         "short_info": "Marlon is passionate how unified communications and IT infrastructure can" +
@@ -107,8 +135,24 @@ export default class Speakers extends Component {
         "image": require('../../assets/images/speaker/arun.png')
       }
       ,
-
-
+      {
+        "name": "Gary Gardiner",
+        "short_info": "Gary has been working in the Cyber Security industry for 22 years. In this time he has worked in large financial institutions, Government System" +
+          " Integrators and vendors. ",
+        "long_info": "",
+        "post": "Regional Manager WA & NT",
+        "office": "Fleet Complete",
+        "image": require('../../assets/images/speaker/gary.png')
+      },
+      {
+        "name": "Clinton Wolf",
+        "short_info": "Clinton Wolf has a Bachelor of Laws (LLB) and a Bachelor of Arts (BA) from Murdoch University. Clinton has business interests in" +
+          " Media,Health, Mining, Civil and Construction.",
+        "long_info": "",
+        "post": "Regional Manager WA & NT",
+        "office": "Fleet Complete",
+        "image": require('../../assets/images/speaker/clinton.png')
+      },
       {
         "name": "Des Headland",
         "short_info": "Des is CEO for Spartan First, " +
@@ -150,48 +194,18 @@ export default class Speakers extends Component {
         "office": "Fleet Complete",
         "image": require('../../assets/images/speaker/brendon.png')
       },
+      
+      
+     
+     
+     
       {
-        "name": "Gary Gardiner",
-        "short_info": "Gary has been working in the Cyber Security industry for 22 years. In this time he has worked in large financial institutions, Government System" +
-          " Integrators and vendors. ",
+        "name": "Dinali David",
+        "short_info": "Dinali is CEO of Domini Global Business Services, Managing Director of LeamonApp Australia, Director for GACS Australia and serves as an Executive Director for DAPA Australia and the Director for DAPA Australia and the AWS Institute of Education. ",
         "long_info": "",
         "post": "Regional Manager WA & NT",
         "office": "Fleet Complete",
-        "image": require('../../assets/images/speaker/gary.png')
-      },
-      {
-        "name": "Jamie D'Arcy",
-        "short_info": "Jamie is a senior executive with more than 20 years’ experience in the Telecommunications Industry. Jamie has had success, working in" +
-          " both the direct sales and indirect sales channels across Telstra SME and Enterprise customers.",
-        "long_info": "",
-        "post": "Regional Manager WA & NT",
-        "office": "Fleet Complete",
-        "image": require('../../assets/images/speaker/jamie.png')
-      },
-      {
-        "name": "Clinton Wolf",
-        "short_info": "Clinton Wolf has a Bachelor of Laws (LLB) and a Bachelor of Arts (BA) from Murdoch University. Clinton has business interests in" +
-          " Media,Health, Mining, Civil and Construction.",
-        "long_info": "",
-        "post": "Regional Manager WA & NT",
-        "office": "Fleet Complete",
-        "image": require('../../assets/images/speaker/clinton.png')
-      },
-      {
-        "name": "Michelle Jenkins",
-        "short_info": "An experienced business leader in Corporate and NGO positions holding Executive and CEO positions for over 25 years.",
-        "long_info": "",
-        "post": "Regional Manager WA & NT",
-        "office": "Fleet Complete",
-        "image": require('../../assets/images/speaker/jen.png')
-      },
-      {
-        "name": "Tim Fawcett",
-        "short_info": "Tim Fawcett is the head of government affairs for CISCO and part of Cisco's ANZ senior leadership team. Tim is responsible for all Cisco's government engagement activities including public policy advocacy and legislative response.",
-        "long_info": "",
-        "post": "Regional Manager WA & NT",
-        "office": "Fleet Complete",
-        "image": require('../../assets/images/speaker/ff.png')
+        "image": require('../../assets/images/speaker/din.png')
       }
     ];
 
@@ -277,17 +291,17 @@ export default class Speakers extends Component {
 
               <View
                 style={{ flexDirection: 'row', borderRadius: 10, flex: 1, marginLeft: 2, marginTop: 17, marginBottom: 10, width: '100%' }}>
-                <View style={{ flex: 1,height:85 }}>
+                <View style={{ height:75 }}>
                   <View style={{  }}>
                     <Image
 
-                      style={{ padding:10, backgroundColor: '#FFFFff', borderRadius: 50, width: 90, height: 90}}
+                      style={{ padding:10, backgroundColor: '#FFFFff', borderRadius: 50, width: 75, height: 75}}
                       source={item.image}>
 
                     </Image>
                   </View>
                 </View>
-                <View style={{ flex: 2.2 }}>
+                <View style={{ flex: 2.3,marginLeft:10 }}>
                   <Text style={{ fontFamily: 'Lato-Bold', fontSize: 16, color: '#000000' }}>{item.name}</Text>
 
                   <View style={{ flexDirection: 'row', width: '100%', marginRight: 3 }}>

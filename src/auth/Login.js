@@ -112,7 +112,7 @@ export default class Login extends Component {
       );
     }
     return (
-      <>
+      <View style={{ flex: 1 }}>
         <ImageBackground
           source={require('../../assets/images/app_background.png')}
           style={styles.image}>
@@ -137,7 +137,7 @@ export default class Login extends Component {
               source={require('../../assets/images/logo.png')}
             />
           </View>
-          <View style={{ flex: 1, paddingLeft: 20, paddingRight: 20 }}>
+          <View style={{ flex: 2, paddingLeft: 20, paddingRight: 20 }}>
             <View style={styles.searchSection}>
               <Icon name="user-circle" size={20} color="#000" />
               <TextInput
@@ -166,15 +166,15 @@ export default class Login extends Component {
               onPress={() => this.onSignin()}>
               <Text style={styles.text}>Sign In</Text>
             </TouchableOpacity>
-          </View>
-          <View style={{ flex: 1, padding: 25, alignItems: 'center' }}>
+            {/* </View> */}
+            {/* <View style={{ flex: 1, padding: 5,backgroundColor:'#987898' }}> */}
             <TouchableOpacity
-              style={{ alignSelf: 'center', marginTop: 35 }}
+              style={{ alignSelf: 'center', marginTop: 20 }}
               onPress={() => this.onGoSignup()}>
               <Text>
                 <Text
                   style={{ color: '#ffffff', marginRight: 5, fontSize: 16, fontFamily: 'Lato-Regular' }}>
-                  Don't have account?
+                  Don't have an account?
               </Text>
                 <Text
                   style={{ marginLeft: 5, color: '#fff93c', fontFamily: 'Lato-Bold', fontSize: 16 }}>
@@ -188,36 +188,56 @@ export default class Login extends Component {
               source={require('../../assets/images/bottom_logo.png')}
             /> */}
 
-<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            {/* <View style={{
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}> */}
 
-<Text style={{
-    color: '#FFFFFF',
-    fontSize: 14,
+            <Text style={{
+              color: '#FFFFFF',
+              fontSize: 14,
 
-    fontFamily: 'Lato-Bold',
-    alignSelf: 'center',
-}}>Sponsored by</Text>
-<View style={{ flexDirection: 'row', marginTop: 15 }}>
-    <View style={{ backgroundColor: '#FFFFFF', borderRadius: 10, width: 80, height: 70, marginLeft: 10 }}>
-        <Image
-            style={{ width: 75, height: 75, resizeMode: 'contain' }}
-            source={require('../../assets/images/spnsr/sp12.png')}
-        />
-    </View>
-    <View style={{ backgroundColor: '#FFFFFF', borderRadius: 10, width: 80, height: 70, marginLeft: 10 }}>
-        <Image
-            style={{ width: 75, height: 75, resizeMode: 'contain' }}
-            source={require('../../assets/images/spnsr/sp4.png')}
-        />
-    </View>
+              fontFamily: 'Lato-Bold',
+              alignSelf: 'center',
+            }}>Sponsored by</Text>
 
-</View>
+            <View style={{ flexDirection: 'row', marginTop: 15, alignItems: 'center', alignSelf: 'center' }}>
+              <View style={{ justifyContent: 'center', backgroundColor: '#FFFFFF', borderRadius: 10, width: 70, height: 70 }}>
+                <Image
+                  style={{ width: 60, height: 60, resizeMode: 'contain', alignSelf: 'center' }}
+                  source={require('../../assets/images/spnsr/sp12.png')}
+                />
+              </View>
+              <View style={{ justifyContent: 'center', backgroundColor: '#FFFFFF', borderRadius: 10, width: 70, height: 70, marginLeft: 10 }}>
+                <Image
+                  style={{ width: 60, height: 60, resizeMode: 'contain', alignSelf: 'center' }}
+                  source={require('../../assets/images/spnsr/sp4.png')}
+                />
+              </View>
 
-</View>
 
+            </View>
+            <View style={{ flexDirection: 'row', marginTop: 10, alignSelf: 'center' }}>
+              <Text style={{
+                color: '#FFFFFF',
+                fontSize: 14,
+
+                fontFamily: 'Lato-Bold',
+                alignSelf: 'center',
+              }}>Powered by </Text>
+              <Image
+                style={{ width: 60, height: 60, resizeMode: 'contain' }}
+                source={require('../../assets/images/lemon.png')}
+              />
+            </View>
           </View>
+
+          {/* </View> */}
+
+          {/* </View> */}
         </ImageBackground>
-      </>
+      </View>
     );
   }
 }
@@ -240,16 +260,16 @@ const styles = StyleSheet.create({
     shadowRadius: 1, //IOS
     backgroundColor: '#ffffff',
     elevation: 5, // Android
-    height: 50,
+    height: 44,
     width: 150,
     borderRadius: 25,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    marginTop: 30,
-    alignSelf:'center'
+    marginTop: 20,
+    alignSelf: 'center'
 
-},
+  },
   button1: {
     shadowColor: "#000000",
     shadowOpacity: 0.8,
@@ -272,13 +292,14 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
+    paddingTop: 20,
     resizeMode: 'cover',
     justifyContent: 'center',
   },
   searchSection: {
     borderColor: '#d3d3d3',
     borderWidth: 1,
-    height: 50,
+    height: 44,
     marginTop: 10,
     borderRadius: 25,
     paddingLeft: 25,

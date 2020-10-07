@@ -17,7 +17,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import ThankyouScreen from '../TabsScreen/ThankyouScreen';
 import AwardsNominee from '../TabsScreen/AwardsNominee';
 import AwardsCats from '../TabsScreen/AwardsCats';
-import ViewMapfloor from '../TabsScreen/ViewMapfloor';
+// import ViewMapfloor from '../TabsScreen/ViewMapfloor';
 import Sponser from '../TabsScreen/Sponsers';
 import Agenda from '../TabsScreen/Agenda';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -170,7 +170,7 @@ function MainNavigation1() {
       }} />
 
 
-      <HomeStack.Screen name='ViewMapfloor' component={ViewMapfloor} options={{
+      {/* <HomeStack.Screen name='ViewMapfloor' component={ViewMapfloor} options={{
         title: 'Map Floor',
         headerStyle: {
           backgroundColor: '#e85b3d',
@@ -181,7 +181,7 @@ function MainNavigation1() {
         headerTitleStyle: {
           fontWeight: 'bold',
         },
-      }} />
+      }} /> */}
 
 <HomeStack.Screen name='Profile' component={Profile} options={{
         title: 'Map Floor',

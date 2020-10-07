@@ -15,7 +15,7 @@ export default class Agenda extends Component {
         this.agendaData = [
             {
                 "time": "8:45 AM",
-                "desc": "Doors open"
+                "desc": "Doors Open"
             },
             {
                 "time": "9:00 AM",

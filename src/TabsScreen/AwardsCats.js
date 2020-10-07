@@ -162,7 +162,7 @@ export default class AwardsCats extends Component {
 
 
 
-                        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                        <View style={{ flex: 1.3, alignItems: 'center' }}>
 
                             <Text style={{
                                 color: '#000000',
@@ -172,21 +172,34 @@ export default class AwardsCats extends Component {
                                 alignSelf: 'center',
                             }}>Sponsored by</Text>
                             <View style={{ flexDirection: 'row', marginTop: 15 }}>
-                                <View style={{ backgroundColor: '#FFFFFF', borderRadius: 10, width: 80, height: 70, marginLeft: 10 }}>
+                                <View style={{ justifyContent: 'center', backgroundColor: '#FFFFFF', borderRadius: 10, width: 70, height: 70 }}>
                                     <Image
-                                        style={{ width: 75, height: 75, resizeMode: 'contain' }}
+                                        style={{ width: 60, height: 60, resizeMode: 'contain', alignSelf: 'center' }}
                                         source={require('../../assets/images/spnsr/sp12.png')}
                                     />
                                 </View>
-                                <View style={{ backgroundColor: '#FFFFFF', borderRadius: 10, width: 80, height: 70, marginLeft: 10 }}>
+                                <View style={{ justifyContent: 'center', backgroundColor: '#FFFFFF', borderRadius: 10, width: 70, height: 70, marginLeft: 10 }}>
                                     <Image
-                                        style={{ width: 75, height: 75, resizeMode: 'contain' }}
+                                        style={{ width: 60, height: 60, resizeMode: 'contain', alignSelf: 'center' }}
                                         source={require('../../assets/images/spnsr/sp4.png')}
                                     />
                                 </View>
 
-                            </View>
 
+                            </View>
+                            <View style={{ flexDirection: 'row', marginTop: 10 }}>
+                                <Text style={{
+                                    color: '#000000',
+                                    fontSize: 14,
+
+                                    fontFamily: 'Lato-Bold',
+                                    alignSelf: 'center',
+                                }}>Powered by </Text>
+                                <Image
+                                    style={{ width: 55, height: 55, resizeMode: 'contain' }}
+                                    source={require('../../assets/images/lemon.png')}
+                                />
+                            </View>
                         </View>
                     </View>
 
