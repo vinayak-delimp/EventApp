@@ -8,10 +8,12 @@ import {
   ImageBackground,
   ScrollView,
   TextInput,
-  StyleSheet,
+  StyleSheet,Keyboard,
   Alert,
   ActivityIndicator,
 } from 'react-native';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+
 import { ApiCommon } from '../Apicommon';
 import AsyncStorage from '@react-native-community/async-storage';
 export default class Login extends Component {
@@ -57,7 +59,7 @@ export default class Login extends Component {
   onRegister = async () => {
     if (this.state.name === '') {
 
-      this.showValidationAlert('Enter your  first name')
+      this.showValidationAlert('Enter your first name')
       return;
     }
     if (this.state.lastname === '') {
@@ -67,7 +69,7 @@ export default class Login extends Component {
     }
 
     if (this.state.company === '') {
-      this.showValidationAlert('Enter Company.')
+      this.showValidationAlert('Enter Company name.')
 
       return;
     }
@@ -132,7 +134,7 @@ export default class Login extends Component {
           this.props.navigation.goBack();
         }
         else {
-          Alert.alert(responseJson.data.error[0]);
+          this.showValidationAlert(responseJson.data.error[0]);
 
         }
         this.setState({
@@ -173,116 +175,147 @@ export default class Login extends Component {
         <ImageBackground
           source={require('../../assets/images/app_background.png')}
           style={styles.image}>
+          <View style={{height:25}}/>
           {/* <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
                         <Image source={require('../../assets/images/logo.png')} />
                     </View> */}
-          <ScrollView style={{ flex: 1, padding: 20 }}>
+          <KeyboardAwareScrollView style={{ flex: 1, padding: 15 }}>
             <Image
-              style={{ width: 220, height: 150, resizeMode: 'contain',alignSelf:'center' }}
+              style={{ width: '60%', height: 150, resizeMode: 'contain', alignSelf: 'center' }}
               source={require('../../assets/images/logo.png')}
             />
-            <View style={styles.searchSection}>
-              {/* <Icon name="ios-search" size={20} color="#000" /> */}
-              <TextInput
-                placeholder="First name"
-                style={{ height: 40, width: '80%', fontFamily: 'Lato-Regular' }}
-                value={this.state.name}
-                onChangeText={(val) => this.onChangeInputText(val, 'name')}
-                underlineColorAndroid="transparent"
-              />
-            </View>
-            <View style={styles.searchSection}>
-              {/* <Icon name="user-circle" size={20} color="#000" /> */}
-              <TextInput
-                placeholder="Last name"
-                style={{ height: 40, width: '80%', fontFamily: 'Lato-Regular' }}
-                value={this.state.lastname}
-                onChangeText={(val) => this.onChangeInputText(val, 'lastname')}
-                underlineColorAndroid="transparent"
-              />
-            </View>
+
+            <View style={{ backgroundColor: 'rgba(255,255,255,.9)', borderRadius: 15, padding: 20 }}>
+              <Text style={{ marginTop: 5, paddingLeft: 5, color: '#696969', fontFamily:'Lato-Bold', fontsize: 10 }}>First Name</Text>
+              <View style={styles.searchSection}>
+                {/* <Icon name="ios-search" size={20} color="#000" /> */}
+                <TextInput
+                  // placeholder="First name"
+                  autoCorrect={false}
+
+                  style={{ height: 40, width: '80%' }}
+                  value={this.state.name}
+                  onChangeText={(val) => this.onChangeInputText(val, 'name')}
+                  underlineColorAndroid="transparent"
+                />
+              </View>
 
 
+              <Text style={{ marginTop: 10, paddingLeft: 5, color: '#696969', fontFamily:'Lato-Bold', fontsize: 10 }}>Last Name</Text>
 
-            <View style={styles.searchSection}>
-              {/* <Icon name="user-circle" size={20} color="#000" /> */}
-              <TextInput
-                placeholder="Company"
-                style={{ height: 40, width: '80%', fontFamily: 'Lato-Regular' }}
-                value={this.state.company}
-                onChangeText={(val) => this.onChangeInputText(val, 'company')}
-                underlineColorAndroid="transparent"
-              />
-            </View>
-
-            <View style={styles.searchSection}>
-              {/* <Icon name="user-circle" size={20} color="#000" /> */}
-              <TextInput
-                placeholder="Email address"
-                style={{ height: 40, width: '80%', fontFamily: 'Lato-Regular' }}
-                value={this.state.email}
-                onChangeText={(val) => this.onChangeInputText(val, 'email')}
-                underlineColorAndroid="transparent"
-              />
-            </View>
+              <View style={styles.searchSection}>
+                {/* <Icon name="user-circle" size={20} color="#000" /> */}
+                <TextInput
+                autoCorrect={false}
+                  // placeholder="Last name"
+                  style={{ height: 40, width: '80%' }}
+                  value={this.state.lastname}
+                  onChangeText={(val) => this.onChangeInputText(val, 'lastname')}
+                  underlineColorAndroid="transparent"
+                />
+              </View>
 
 
+              <Text style={{ marginTop: 10, paddingLeft: 5, color: '#696969', fontFamily:'Lato-Bold', fontsize: 10 }}>Company Name</Text>
 
-            <View style={styles.searchSection}>
-              {/* <Icon name="user-circle" size={20} color="#000" /> */}
-              <TextInput
-                secureTextEntry={true}
-                placeholder="Password"
-                style={{ height: 40, width: '80%', fontFamily: 'Lato-Regular' }}
-                value={this.state.password}
-                onChangeText={(val) => this.onChangeInputText(val, 'password')}
-                underlineColorAndroid="transparent"
-              />
-            </View>
+              <View style={styles.searchSection}>
+                {/* <Icon name="user-circle" size={20} color="#000" /> */}
+                <TextInput
+                  // placeholder="Company"
+                  autoCorrect={false}
 
-
-            <View style={styles.searchSection}>
-              {/* <Icon name="user-circle" size={20} color="#000" /> */}
-              <TextInput
-                placeholder="Mobile Number"
-                maxLength={10}
-
-                style={{ height: 40, width: '80%', fontFamily: 'Lato-Regular' }}
-                value={this.state.address}
-                onChangeText={(val) => this.onChangeInputText(val, 'mobile')}
-                underlineColorAndroid="transparent"
-              />
-            </View>
-
-            <View style={{ flexDirection: 'row' }}>
+                  style={{ height: 40, width: '80%' }}
+                  value={this.state.company}
+                  onChangeText={(val) => this.onChangeInputText(val, 'company')}
+                  underlineColorAndroid="transparent"
+                />
+              </View>
 
 
-            </View>
+              <Text style={{ marginTop: 10, paddingLeft: 5, color: '#696969', fontFamily:'Lato-Bold', fontsize: 10 }}>Email Address</Text>
 
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => this.onRegister()}>
-              <Text style={styles.text}>Register</Text>
-            </TouchableOpacity>
+              <View style={styles.searchSection}>
+                {/* <Icon name="user-circle" size={20} color="#000" /> */}
+                <TextInput
+                  keyboardType={"email-address"}
+                  autoCorrect={false}
 
-            <TouchableOpacity
-              style={{ alignSelf: 'center', margin: 20 }}
-              onPress={() => this.props.navigation.goBack()}
-            // onPress={onPress}
-            >
-              <Text>
-                <Text
-                  style={{ color: '#ffffff', marginRight: 5, fontSize: 16, fontFamily: 'Lato-Regular' }}>
-                  Already have account?
+                  // placeholder="Email address"
+                  style={{ height: 40, width: '80%' }}
+                  value={this.state.email}
+                  onChangeText={(val) => this.onChangeInputText(val, 'email')}
+                  underlineColorAndroid="transparent"
+                />
+              </View>
+
+              <Text style={{ marginTop: 10, paddingLeft: 5, color: '#696969', fontFamily:'Lato-Bold', fontsize: 10 }}>Password</Text>
+
+
+              <View style={styles.searchSection}>
+                {/* <Icon name="user-circle" size={20} color="#000" /> */}
+                <TextInput
+                  secureTextEntry={true}
+                  autoCorrect={false}
+                  blurOnSubmit={false}
+                  onSubmitEditing={()=>Keyboard.dismiss()}
+
+                  // placeholder="Password"
+                  style={{ height: 40, width: '80%' }}
+                  value={this.state.password}
+                  onChangeText={(val) => this.onChangeInputText(val, 'password')}
+                  underlineColorAndroid="transparent"
+                />
+              </View>
+
+              <Text style={{ marginTop: 10, paddingLeft: 5, color: '#696969', fontFamily:'Lato-Bold', fontsize: 10 }}>Mobile Number</Text>
+
+              <View style={styles.searchSection}>
+                {/* <Icon name="user-circle" size={20} color="#000" /> */}
+                <TextInput
+                  // placeholder="Mobile Number"
+                  maxLength={10}
+                  autoCorrect={false}
+
+                  keyboardType={"phone-pad"}
+                  style={{ height: 40, width: '80%' }}
+                  value={this.state.address}
+                  onChangeText={(val) => this.onChangeInputText(val, 'mobile')}
+                  underlineColorAndroid="transparent"
+                />
+              </View>
+
+              <View style={{ flexDirection: 'row' }}>
+
+
+              </View>
+
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => this.onRegister()}>
+                <Text style={styles.text}>Register</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={{ alignSelf: 'center', marginTop:15 }}
+                onPress={() => this.props.navigation.goBack()}
+              // onPress={onPress}
+              >
+                <Text>
+                  <Text
+                    style={{ color: '#696969', marginRight: 5, fontSize: 13, fontFamily:'Lato-Bold' }}>
+                    Already have account?
               </Text>
-                <Text
-                  style={{ marginLeft: 5, color: '#fff93c', fontFamily: 'Lato-Bold', fontSize: 16 }}>
-                  &nbsp;Login Now
+                  <Text
+                    style={{ marginLeft: 5, color: 'rgba(190, 64, 58,0.9)', fontWeight:'bold', fontSize: 13 }}>
+                    &nbsp;Login Now
               </Text>
-              </Text>
-            </TouchableOpacity>
+                </Text>
+              </TouchableOpacity>
+
+            </View>
+
             <View style={{ height: 20 }} />
-          </ScrollView>
+          </KeyboardAwareScrollView>
           {/* <View style={{ flex: 1, padding: 25, alignItems: "center" }}>
                         <TouchableOpacity
                             style={{ alignSelf: "center", marginTop: 35 }}
@@ -307,7 +340,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    fontFamily: 'Lato-Bold'
+    fontWeight:'bold'
   },
   button: {
     shadowColor: 'rgba(255,0,0, .4)', // IOS
@@ -322,7 +355,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    marginTop: 30,
+    marginTop: 20,
     alignSelf: 'center'
 
   },
@@ -330,23 +363,24 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
+    paddingBottom:10
   },
   searchSection: {
     borderColor: '#d3d3d3',
     borderWidth: 1,
-    height: 50,
-    marginTop: 10,
-    borderRadius: 25,
-    paddingLeft: 25,
+    height: 40,
+    marginTop: 3,
+    borderRadius: 5,
+    paddingLeft: 15,
     flexDirection: 'row',
     //        justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    elevation: 5,
+    backgroundColor: '#fff'
+    // shadowColor: '#000',
+    // shadowOffset: { width: 0, height: 1 },
+    // shadowOpacity: 0.8,
+    // shadowRadius: 2,
+    // elevation: 5,
   },
 
   searchSection1: {

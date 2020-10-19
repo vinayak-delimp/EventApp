@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import { ApiCommon } from '../Apicommon';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 const STORAGE_KEY = '@save_login';
 export default class Login extends Component {
   constructor(props) {
@@ -79,7 +80,7 @@ export default class Login extends Component {
         // Alert.alert( responseJson);
         if (responseJson.status === '0') {
 
-          alert(JSON.stringify(responseJson));
+          alert(JSON.stringify(responseJson.data.error[0]));
         }
         else {
           AsyncStorage.setItem('login', JSON.stringify(responseJson.data));
@@ -123,6 +124,7 @@ export default class Login extends Component {
               alignItems: 'center',
               padding: 10,
             }}>
+
             <Text
               style={{
                 color: '#ffffff',
@@ -138,99 +140,104 @@ export default class Login extends Component {
             />
           </View>
           <View style={{ flex: 2, paddingLeft: 20, paddingRight: 20 }}>
-            <View style={styles.searchSection}>
-              <Icon name="user-circle" size={20} color="#000" />
-              <TextInput
-                placeholder="Email address"
-                style={{ height: 40, width: '100%', marginLeft: 15, fontFamily: 'Lato-Regular' }}
-                onChangeText={(val) => this.onChangeEmailText(val, 'email')}
-                value={this.state.email}
-                underlineColorAndroid="transparent"
-              />
-            </View>
-            <View style={styles.searchSection}>
-              <Icon name="lock" size={20} color="#000" />
-              <TextInput
-                placeholder="Password"
-                secureTextEntry={true}
-                style={{ height: 40, width: '100%', marginLeft: 15, fontFamily: 'Lato_Regular' }}
-                onChangeText={(text) =>
-                  this.onChangePasswordText(text, 'password')
-                }
-                value={this.state.password}
-                underlineColorAndroid="transparent"
-              />
-            </View>
-            <TouchableOpacity elevation={5}
-              style={styles.button}
-              onPress={() => this.onSignin()}>
-              <Text style={styles.text}>Sign In</Text>
-            </TouchableOpacity>
-            {/* </View> */}
-            {/* <View style={{ flex: 1, padding: 5,backgroundColor:'#987898' }}> */}
-            <TouchableOpacity
-              style={{ alignSelf: 'center', marginTop: 20 }}
-              onPress={() => this.onGoSignup()}>
-              <Text>
-                <Text
-                  style={{ color: '#ffffff', marginRight: 5, fontSize: 16, fontFamily: 'Lato-Regular' }}>
-                  Don't have an account?
-              </Text>
-                <Text
-                  style={{ marginLeft: 5, color: '#fff93c', fontFamily: 'Lato-Bold', fontSize: 16 }}>
-                  &nbsp;Register Now
-              </Text>
-              </Text>
+            <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
+              <View style={styles.searchSection}>
+                <Icon name="user-circle" size={20} color="#000" />
+                <TextInput
+                  placeholder="Email address"
+                  keyboardType={"email-address"}
 
-            </TouchableOpacity>
-            {/* <Image
+                  style={{ height: 40, width: '100%', marginLeft: 15, fontFamily: 'Lato-Regular' }}
+                  onChangeText={(val) => this.onChangeEmailText(val, 'email')}
+                  value={this.state.email}
+                  underlineColorAndroid="transparent"
+                />
+              </View>
+              <View style={styles.searchSection}>
+                <Icon name="lock" size={20} color="#000" />
+                <TextInput
+                  placeholder="Password"
+                  secureTextEntry={true}
+                  style={{ height: 40, width: '100%', marginLeft: 15, fontFamily: 'Lato_Regular' }}
+                  onChangeText={(text) =>
+                    this.onChangePasswordText(text, 'password')
+                  }
+                  value={this.state.password}
+                  underlineColorAndroid="transparent"
+                />
+              </View>
+              <TouchableOpacity elevation={5}
+                style={styles.button}
+                onPress={() => this.onSignin()}>
+                <Text style={styles.text}>Sign In</Text>
+              </TouchableOpacity>
+              {/* </View> */}
+              {/* <View style={{ flex: 1, padding: 5,backgroundColor:'#987898' }}> */}
+              <TouchableOpacity
+                style={{ alignSelf: 'center', marginTop: 20 }}
+                onPress={() => this.onGoSignup()}>
+                <Text>
+                  <Text
+                    style={{ color: '#ffffff', marginRight: 5, fontSize: 16, fontFamily: 'Lato-Regular' }}>
+                    Don't have an account?
+              </Text>
+                  <Text
+                    style={{ marginLeft: 5, color: '#fff93c', fontFamily: 'Lato-Bold', fontSize: 16 }}>
+                    &nbsp;Register Now
+              </Text>
+                </Text>
+
+              </TouchableOpacity>
+              {/* <Image
               style={{ marginTop: 35 }}
               source={require('../../assets/images/bottom_logo.png')}
             /> */}
 
-            {/* <View style={{
+              {/* <View style={{
               flex: 1,
               justifyContent: 'center',
               alignItems: 'center'
             }}> */}
 
-            <Text style={{
-              color: '#FFFFFF',
-              fontSize: 14,
-
-              fontFamily: 'Lato-Bold',
-              alignSelf: 'center',
-            }}>Sponsored by</Text>
-
-            <View style={{ flexDirection: 'row', marginTop: 15, alignItems: 'center', alignSelf: 'center' }}>
-              <View style={{ justifyContent: 'center', backgroundColor: '#FFFFFF', borderRadius: 10, width: 70, height: 70 }}>
-                <Image
-                  style={{ width: 60, height: 60, resizeMode: 'contain', alignSelf: 'center' }}
-                  source={require('../../assets/images/spnsr/sp12.png')}
-                />
-              </View>
-              <View style={{ justifyContent: 'center', backgroundColor: '#FFFFFF', borderRadius: 10, width: 70, height: 70, marginLeft: 10 }}>
-                <Image
-                  style={{ width: 60, height: 60, resizeMode: 'contain', alignSelf: 'center' }}
-                  source={require('../../assets/images/spnsr/sp4.png')}
-                />
-              </View>
-
-
-            </View>
-            <View style={{ flexDirection: 'row', marginTop: 10, alignSelf: 'center' }}>
               <Text style={{
                 color: '#FFFFFF',
                 fontSize: 14,
 
                 fontFamily: 'Lato-Bold',
                 alignSelf: 'center',
-              }}>Powered by </Text>
-              <Image
-                style={{ width: 60, height: 60, resizeMode: 'contain' }}
-                source={require('../../assets/images/lemon.png')}
-              />
-            </View>
+              }}>Sponsored by</Text>
+
+              <View style={{ flexDirection: 'row', marginTop: 15, alignItems: 'center', alignSelf: 'center' }}>
+                <View style={{ justifyContent: 'center', backgroundColor: '#FFFFFF', borderRadius: 10, width: 70, height: 70 }}>
+                  <Image
+                    style={{ width: 60, height: 60, resizeMode: 'contain', alignSelf: 'center' }}
+                    source={require('../../assets/images/spnsr/sp12.png')}
+                  />
+                </View>
+                <View style={{ justifyContent: 'center', backgroundColor: '#FFFFFF', borderRadius: 10, width: 70, height: 70, marginLeft: 10 }}>
+                  <Image
+                    style={{ width: 60, height: 60, resizeMode: 'contain', alignSelf: 'center' }}
+                    source={require('../../assets/images/spnsr/sp4.png')}
+                  />
+                </View>
+
+
+              </View>
+              <View style={{ flexDirection: 'row', marginTop: 10, alignSelf: 'center' }}>
+                <Text style={{
+                  color: '#FFFFFF',
+                  fontSize: 14,
+
+                  fontFamily: 'Lato-Bold',
+                  alignSelf: 'center',
+                }}>Powered by </Text>
+                <Image
+                  style={{ width: 60, height: 60, resizeMode: 'contain' }}
+                  source={require('../../assets/images/lemon.png')}
+                />
+              </View>
+              <View style={{height:30}}></View>
+            </KeyboardAwareScrollView>
           </View>
 
           {/* </View> */}

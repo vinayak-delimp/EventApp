@@ -91,7 +91,7 @@ export default class EventInfo extends Component {
               The key objective of IEBF2020 is to encourage and assist Indigenous business development
               and bridge the digital divide for greater access to information and technology for community
               economic development. Supported by CDM Australia and Telstra Business Technology
-              Centre’s economic and social wellbeing objectives by showcasing a forum of cutting edge
+              Centre’s economic and social well-being objectives by showcasing a forum of cutting edge
               technology to encourage growth in Indigenous owned and run businesses. The forum is
               designed to help and support Indigenous businesses to make the most of technology, to grow
 business and opportunities.{'\n'}</Text>
@@ -105,7 +105,7 @@ business and opportunities.{'\n'}</Text>
               <Text style={{ marginLeft: 4 }}>
               <Image source={require('../../assets/images/tick.png')} style={{ height: 10, width: 10 }}></Image>
 
-                <Text style={{ fontFamily: 'Lato-Bold', fontSize: 13, }}> IoT:</Text>
+                <Text style={{ fontFamily: 'Lato-Bold', fontSize: 13, }}> IOT:</Text>
                 <Text style={{ fontFamily: 'Lato-Regular', fontSize: 13 }}> Better connectivity through internet and voice services.{"\n"}</Text>
               </Text>
 

@@ -55,24 +55,26 @@ export default class SponserInfolead extends Component {
         alert('Please enter name');
         return;
       }
-      if (this.state.email === '') {
-        alert('Please enter email');
-        return;
-      }
       if (this.state.phone === '') {
-        alert('Please enter phone');
+        alert('Enter phone number');
         return;
       }
+      
+      if (this.state.email === '') {
+        alert('Enter email address');
+        return;
+      }
+     
       if (this.state.jobtitle === '') {
-        alert('Please enter job title');
+        alert('Enter your job title');
         return;
       }
       if (this.state.organisation === '') {
-        alert('Please enter organisation');
+        alert('Enter your organisation name');
         return;
       }
       if (this.state.comment === '') {
-        alert('Please enter comment');
+        alert('Enter your comment');
         return;
       }
 
@@ -114,7 +116,7 @@ export default class SponserInfolead extends Component {
           .then((response) => response.json())
           .then((responseJson) => {
             if (responseJson.status === '0')
-              Alert.alert(JSON.stringify(responseJson.data.error));
+              Alert.alert(JSON.stringify(responseJson.data.error[0]));
             else {
               alert(responseJson.data.message);
               this.props.navigation.goBack();
@@ -230,12 +232,12 @@ export default class SponserInfolead extends Component {
             borderRadius: 25,
             padding: 15, justifyContent: 'center'
           }}>
-          <ScrollView showsVerticalScrollIndicator={false}>
+          <ScrollView showsVerticalScrollIndicator={false} >
             <View style={{ borderRadius: 10, backgroundColor: '#FFFFFF', padding: 5, width: 150, alignSelf: 'center' }}>
               <Image style={{ backgroundColor: '#ffffff', padding: 5, height: 120, width: 140, alignSelf: 'center', resizeMode: 'contain', borderRadius: 15 }} source={this.state.sponserimage}></Image>
 
             </View>
-            <Text style={{ color: '#000000', fontFamily: 'Lato-Regular', fontSize: 12,marginTop:10 }}>{this.state.sponserinfo}</Text>
+            <Text style={{ textAlign: 'justify', justifyContent: 'center', color: '#000000', fontFamily: 'Lato-Regular', fontSize: 12, marginTop: 10 }}>{this.state.sponserinfo}</Text>
 
 
 
@@ -243,7 +245,7 @@ export default class SponserInfolead extends Component {
 
               <TextInput
                 placeholder="Name"
-                style={{ height: 40,width:'80%' }}
+                style={{ height: 40, width: '80%' }}
                 value={this.state.name}
                 onChangeText={(val) => this.onChangeInputText(val, 'name')}
                 underlineColorAndroid="transparent"
@@ -254,7 +256,9 @@ export default class SponserInfolead extends Component {
               <TextInput
                 maxLength={10}
                 placeholder="Phone"
-                style={{ height: 40 ,width:'80%'}}
+                keyboardType={"phone-pad"}
+
+                style={{ height: 40, width: '80%' }}
                 value={this.state.phone}
                 onChangeText={(val) => this.onChangeInputText(val, 'phone')}
                 underlineColorAndroid="transparent"
@@ -265,7 +269,9 @@ export default class SponserInfolead extends Component {
               {/* <Icon name="user-circle" size={20} color="#000" /> */}
               <TextInput
                 placeholder="Email"
-                style={{ height: 40,width:'80%' }}
+                keyboardType={"email-address"}
+
+                style={{ height: 40, width: '80%' }}
                 value={this.state.email}
                 onChangeText={(val) => this.onChangeInputText(val, 'email')}
                 underlineColorAndroid="transparent"
@@ -276,7 +282,7 @@ export default class SponserInfolead extends Component {
               {/* <Icon name="user-circle" size={20} color="#000" /> */}
               <TextInput
                 placeholder="Job Title"
-                style={{ height: 40,width:'80%' }}
+                style={{ height: 40, width: '80%' }}
                 value={this.state.jobtitle}
                 onChangeText={(val) => this.onChangeInputText(val, 'jobtitle')}
                 underlineColorAndroid="transparent"
@@ -288,7 +294,7 @@ export default class SponserInfolead extends Component {
               {/* <Icon name="user-circle" size={20} color="#000" /> */}
               <TextInput
                 placeholder="Organisation"
-                style={{ height: 40,width:'80%' }}
+                style={{ height: 40, width: '80%' }}
                 value={this.state.organisation}
                 onChangeText={(val) => this.onChangeInputText(val, 'organisation')}
                 underlineColorAndroid="transparent"
@@ -299,7 +305,7 @@ export default class SponserInfolead extends Component {
               {/* <Icon name="user-circle" size={20} color="#000" /> */}
               <TextInput
                 placeholder="Comment"
-                style={{ height: 80,width:'80%' }}
+                style={{ height: 80, width: '80%' }}
                 value={this.state.comment}
                 onChangeText={(val) => this.onChangeInputText(val, 'comment')}
                 underlineColorAndroid="transparent"
@@ -307,7 +313,20 @@ export default class SponserInfolead extends Component {
             </View>
 
 
-            <TouchableOpacity style={{ alignSelf: 'center', justifyContent: 'center', alignItems: "center", height: 50, width: 150, marginTop: 30, borderRadius: 25, backgroundColor: '#FFFFFF' }}
+            <TouchableOpacity style={{
+              alignSelf: 'center',
+              justifyContent: 'center',
+              alignItems: "center",
+              height: 50, width: 150,
+              marginTop: 30,
+              marginBottom:20,
+              borderRadius: 25,
+              backgroundColor: '#FFFFFF',
+              shadowColor: '#000',
+              shadowOffset: { width: 0, height: 1 },
+              shadowOpacity: 0.8,
+              shadowRadius: 1,
+            }}
               onPress={() => this.enquireNow()}
             >
               <Text style={{ fontWeight: 'bold' }}>Enquire Now</Text>
@@ -340,27 +359,19 @@ const styles = StyleSheet.create({
     //        justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    elevation: 5,
+
   },
   searchSection1: {
     borderColor: '#d3d3d3',
     borderWidth: 1,
     height: 80,
     marginTop: 10,
-    borderRadius: 25,
+    borderRadius: 50,
     paddingLeft: 25,
     flexDirection: 'row',
     //        justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    elevation: 5,
+
   }
 });

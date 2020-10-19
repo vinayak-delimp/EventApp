@@ -184,9 +184,9 @@ export default class NomineeDetail extends Component {
 
                         <Text style={styles.defaultText} >{this.nomineename}</Text>
                         <ScrollView showsVerticalScrollIndicator={false}>
-                        <Text style={styles.defaultDescText} >{this.desc}</Text>
+                            <Text style={styles.defaultDescText} >{this.desc}</Text>
                         </ScrollView>
-                        
+
                         <TouchableOpacity style={{
                             shadowColor: 'rgba(255,0,0, .4)', // IOS
                             shadowOffset: { height: 1, width: 1 }, // IOS

@@ -78,7 +78,7 @@ export default class ThankyouScreen extends Component {
 
                             fontFamily: 'Lato-Bold',
                             alignSelf: 'center',
-                        }}>Sponsered by</Text>
+                        }}>Sponsored by</Text>
                         <View style={{ flexDirection: 'row', marginTop: 15 }}>
                             <View style={{ justifyContent: 'center', backgroundColor: '#FFFFFF', borderRadius: 10, width: 70, height: 70 }}>
                                 <Image

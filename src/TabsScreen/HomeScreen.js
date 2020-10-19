@@ -267,7 +267,7 @@ export default class HomeScreen extends Component {
             <Text style={{
               color: '#ffffff',
               fontSize: 14,
-              marginTop: 30,
+              marginTop: 40,
               fontFamily: 'Lato-Bold',
               alignSelf: 'center',
             }}>Sponsored by</Text>
@@ -301,7 +301,7 @@ export default class HomeScreen extends Component {
               />
             </View>
           </View>
-
+<View style={{height:65}}></View>
         </ScrollView>
 
       </ImageBackground >

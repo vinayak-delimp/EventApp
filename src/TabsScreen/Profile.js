@@ -96,7 +96,7 @@ export default class Profile extends Component {
             borderTopRightRadius:30,
             backgroundColor:'rgba(255, 255, 255, 0.8)',
             borderRadius: 30,
-            padding: 5, justifyContent: 'center'
+            paddingTop:40
           }}>
 
         {/* <View
@@ -114,30 +114,34 @@ export default class Profile extends Component {
             padding: 15
           }}> */}
 
-          {/* <Image
-            style={{ alignSelf: 'center', marginTop: 20, marginRight: 15, height: 110, width: 160, resizeMode: 'contain', marginBottom: 20 }}
-            source={require('../../assets/images/eventlogo.png')}
-          /> */}
-          <View style={{ flexDirection: 'row', marginTop: 15,paddingLeft:5 }}>
+
+<View style={{alignSelf:'center', marginTop:10, backgroundColor: 'rgba(190, 64, 58,0.9)', justifyContent:'center',alignItems:'center', borderRadius:75, height:150,width:150}}>
+<Image
+            style={{ height:100,width:100,   resizeMode: 'contain' }}
+            source={require('../../assets/images/user_profile.png')}
+          />
+</View>
+         
+          <View style={{ marginTop:40,flexDirection: 'row',paddingLeft:10 }}>
             <Text style={styles.pro_text}>Name</Text>
             <Text style={styles.pro_text}>{this.state.jjbody.full_name}</Text>
 
           </View>
 
 
-          <View style={{ flexDirection: 'row', marginTop: 15,paddingLeft:5 }}>
+          <View style={{ flexDirection: 'row', marginTop: 10,paddingLeft:10 }}>
             <Text style={styles.pro_text}>Phone No</Text>
             <Text style={styles.pro_text}>{this.state.jjbody.phone}</Text>
 
           </View>
 
-          <View style={{ flexDirection: 'row', marginTop: 15,paddingLeft:5 }}>
+          <View style={{ flexDirection: 'row', marginTop: 10,paddingLeft:10 }}>
             <Text style={styles.pro_text}>Email Id</Text>
             <Text style={styles.pro_text}>{this.state.jjbody.email}</Text>
 
           </View>
 
-          <View style={{ flexDirection: 'row', marginTop: 15,paddingLeft:5 }}>
+          <View style={{ flexDirection: 'row', marginTop: 10,paddingLeft:10 }}>
             <Text style={styles.pro_text}>Company Name</Text>
             <Text style={styles.pro_text}>{this.state.jjbody.company}</Text>
 

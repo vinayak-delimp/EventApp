@@ -344,11 +344,14 @@ export default class Sponsers extends Component {
             backgroundColor: 'rgba(255, 255, 255, 0.8)',
             borderRadius: 25,
             marginTop: 10,
-            padding: 8, justifyContent: 'center'
+            padding: 8,
+           alignItems: 'center',
+             justifyContent: 'center'
           }}>
 
 
           <FlatList
+          showsVerticalScrollIndicator={false}
             data={this.state.dataSource}
             renderItem={({ item }) => (
               <TouchableOpacity

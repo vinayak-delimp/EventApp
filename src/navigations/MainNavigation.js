@@ -268,7 +268,7 @@ function TabNavigator() {
        inactiveTintColor: "#d7d7d7",
         activeBackgroundColor: '#000000',
          inactiveBackgroundColor: '#000000',
-         style: {borderTopWidth:0,height:65},
+         style: {borderTopWidth:0,height:60},
          tabStyle:{        paddingVertical: 8
          },
          labelStyle:{fontFamily:'Lato-Bold',paddingTop:2,fontSize:13},
